@@ -70,7 +70,7 @@ export function AirDrop() {
                 <CardContent className="p-6 space-y-4">
                     <div className="relative h-40 overflow-hidden rounded-lg">
                         <img
-                            src="/placeholder.svg?height=160&width=320"
+                            src="https://smithii.io/wp-content/uploads/2023/08/AIRDROP-SOLANA-TOKEN-SMITHII-e1692041288405.png"
                             alt="Solana landscape"
                             className="w-full h-full object-cover transition-transform duration-300 ease-in-out transform hover:scale-110"
                         />

@@ -1,6 +1,10 @@
 import { useConnection, useWallet } from "@solana/wallet-adapter-react";
 import { LAMPORTS_PER_SOL, PublicKey, SystemProgram, Transaction } from "@solana/web3.js";
-import { useCallback } from "react";
+import Card from '@mui/material/Card';
+import CardMedia from '@mui/material/CardMedia';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import { CardActions, CardContent, CardHeader, TextField } from "@mui/material";
 
 export function SendSol(){
     const wallet = useWallet();
@@ -9,9 +13,13 @@ export function SendSol(){
     const sendTransaction = async ()=>{
         const publicKey = wallet.publicKey;
 
-        const to = document.getElementById("address").value ;
-        const amount = document.getElementById("amount").value ;
-
+        if(!wallet.publicKey)
+        {
+            alert("Connect Wallet First");
+        }
+        const to = (document.getElementById("address") as HTMLInputElement).value ;
+        const inputAmount = (document.getElementById("amount") as HTMLInputElement).value ;
+        const amount = parseFloat(inputAmount);
         const transaction  = new Transaction();
 
         transaction.add(
@@ -26,9 +34,40 @@ export function SendSol(){
         alert("SOL send successfully to" + to);
 
     }
-    return <div>
-        <input id="address" type="text" placeholder="type receivers details"></input>
-        <input id="amount" type="text" placeholder="Amount of SOL"></input>
-        <button onClick={sendTransaction}>Send SOL</button>
-    </div>
+    return (
+        <div className="flex-grow bg-gradient-to-br from-purple-400 via-pink-500 to-red-500 flex items-center justify-center p-4 pt-16">
+            <Card className="w-full max-w-md overflow-hidden transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl">
+                <CardHeader
+                    className="bg-gradient-to-r from-blue-500 to-purple-600 text-white p-6"
+                    title={
+                        <Typography variant="h5" className="text-2xl font-bold flex items-center gap-2">
+                            <span role="img" aria-label="coins">💰</span> Send Solana
+                        </Typography>
+                    }
+                />
+                <CardContent className="p-6 space-y-4">
+                    <TextField
+                        id="address"
+                        type="text"
+                        placeholder="Enter Address"
+                        className="w-full"
+                    />
+                    <TextField
+                        id="amount"
+                        type="text"
+                        placeholder="Enter SOL amount"
+                        className="w-full"
+                    />
+                </CardContent>
+                <CardActions className="bg-gray-50 p-6">
+                    <Button
+                        onClick={sendTransaction}
+                        className="w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white hover:from-blue-600 hover:to-purple-700 transition-all duration-300"
+                    >
+                        Send SOL
+                    </Button>
+                </CardActions>
+            </Card>
+
+    </div>);
 }
