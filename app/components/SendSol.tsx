@@ -11,17 +11,24 @@ export function SendSol(){
     const {connection} = useConnection();
 
     const sendTransaction = async ()=>{
-        const publicKey = wallet.publicKey;
 
         if(!wallet.publicKey)
         {
             alert("Connect Wallet First");
+            return;
         }
+
+        const publicKey = wallet.publicKey;
         const to = (document.getElementById("address") as HTMLInputElement).value ;
         const inputAmount = (document.getElementById("amount") as HTMLInputElement).value ;
         const amount = parseFloat(inputAmount);
+        
+        if (!to || !amount) {
+            alert("Please enter a valid address and amount");
+            return;
+        }
+        
         const transaction  = new Transaction();
-
         transaction.add(
             SystemProgram.transfer({
                 fromPubkey : publicKey,
