@@ -6,6 +6,43 @@ export function AnimatedTabsHover() {
   const TABS = ['Wallet', 'Airdrop', 'SignMessage', 'SendSOL'];
 //   const SELECTED = ['Wallet', 'Airdrop', 'SignMessage', 'SendSOL']
   const [selected, setSelected] = useState('Wallet');
+
+  const renderContent = () => {
+    switch (selected) {
+      case 'Wallet':
+        return (
+          <div className="p-4 bg-white dark:bg-zinc-900 rounded-lg mt-4">
+            <h2 className="text-xl font-bold mb-2">Wallet</h2>
+            <p>View your wallet balance and transactions here.</p>
+          </div>
+        );
+      case 'Airdrop':
+        return (
+          <div className="p-4 bg-white dark:bg-zinc-900 rounded-lg mt-4">
+            <h2 className="text-xl font-bold mb-2">Airdrop</h2>
+            <p>Request an airdrop of SOL tokens to your wallet.</p>
+          </div>
+        );
+      case 'SignMessage':
+        return (
+          <div className="p-4 bg-white dark:bg-zinc-900 rounded-lg mt-4">
+            <h2 className="text-xl font-bold mb-2">Sign Message</h2>
+            <p>Sign a message with your wallet to prove ownership.</p>
+          </div>
+        );
+      case 'SendSOL':
+        return (
+          <div className="p-4 bg-white dark:bg-zinc-900 rounded-lg mt-4">
+            <h2 className="text-xl font-bold mb-2">Send SOL</h2>
+            <p>Send SOL tokens to another wallet address.</p>
+          </div>
+        );
+      default:
+        return null;
+    }
+  };
+
+
   return (
     <div>
         <div className='flex flex-row justify-center space-x-8'>
@@ -37,11 +74,7 @@ export function AnimatedTabsHover() {
         </div>
         
         <div>
-        {selected === 'SignMessage' ? (
-            <div>
-                hi there
-            </div>
-        ) : null}
+            {renderContent()}
         </div>
     </div>
   );
