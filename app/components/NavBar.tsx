@@ -36,7 +36,7 @@ export function AnimatedTabsHover() {
 
 
   return (
-    <div>
+    <div className="min-h-screen flex flex-col">
         <div className='flex flex-row justify-center space-x-8'>
         <AnimatedBackground
             defaultValue={TABS[0]}
@@ -64,8 +64,8 @@ export function AnimatedTabsHover() {
             ))}
         </AnimatedBackground>
         </div>
-        
-        <div>
+        <br/>
+        <div className='overscroll-none'>
             {renderContent()}
         </div>
     </div>
