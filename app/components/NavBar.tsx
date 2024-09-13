@@ -1,6 +1,10 @@
 'use client'
 import AnimatedBackground from '@/components/core/animated-background';
 import { useState } from 'react';
+import { SendSol } from './SendSol';
+import { AirDrop } from './Airdrop';
+import { ShowSolBalance } from './Balance';
+import { SignMessage } from './SignMessage';
 
 export function AnimatedTabsHover() {
   const TABS = ['Wallet', 'Airdrop', 'SignMessage', 'SendSOL'];
@@ -11,31 +15,19 @@ export function AnimatedTabsHover() {
     switch (selected) {
       case 'Wallet':
         return (
-          <div className="p-4 bg-white dark:bg-zinc-900 rounded-lg mt-4">
-            <h2 className="text-xl font-bold mb-2">Wallet</h2>
-            <p>View your wallet balance and transactions here.</p>
-          </div>
+          <ShowSolBalance/>
         );
       case 'Airdrop':
         return (
-          <div className="p-4 bg-white dark:bg-zinc-900 rounded-lg mt-4">
-            <h2 className="text-xl font-bold mb-2">Airdrop</h2>
-            <p>Request an airdrop of SOL tokens to your wallet.</p>
-          </div>
+          <AirDrop/>
         );
       case 'SignMessage':
         return (
-          <div className="p-4 bg-white dark:bg-zinc-900 rounded-lg mt-4">
-            <h2 className="text-xl font-bold mb-2">Sign Message</h2>
-            <p>Sign a message with your wallet to prove ownership.</p>
-          </div>
+          <SignMessage/>
         );
       case 'SendSOL':
         return (
-          <div className="p-4 bg-white dark:bg-zinc-900 rounded-lg mt-4">
-            <h2 className="text-xl font-bold mb-2">Send SOL</h2>
-            <p>Send SOL tokens to another wallet address.</p>
-          </div>
+          <SendSol/>
         );
       default:
         return null;
