@@ -26,8 +26,24 @@ export function AirDrop() {
         const input = (document.getElementById("amount") as HTMLInputElement).value ;
         const amount = parseFloat(input);
         console.log("Amount entered" + amount)
-        const resp = await connection.requestAirdrop(wallet.publicKey, 1e9 * amount);
-        console.log(resp);
+        const airdropSignature = await connection.requestAirdrop(wallet.publicKey, 1e9 * amount);
+        console.log(airdropSignature);
+
+        const latestBlockHash = await connection.getLatestBlockhash();
+        console.log(latestBlockHash)
+        try{
+            const trans = await connection.confirmTransaction({
+                blockhash: latestBlockHash.blockhash,
+                lastValidBlockHeight: latestBlockHash.lastValidBlockHeight,
+                signature: airdropSignature,
+            });
+            console.log("Transaction confirmed")
+            console.log(trans);
+        }catch(err)
+        {
+            console.log("error occured")
+            console.log(err)
+        }
 
         const transaction = await axios.post(SOLANA_DEVNET, 
             {
@@ -35,7 +51,7 @@ export function AirDrop() {
               "id": 1,
               "method": "getTransaction",
               "params": [
-                `${resp}`,
+                `${airdropSignature}`,
                 "json"
               ]
             }
@@ -44,12 +60,14 @@ export function AirDrop() {
         if(!transaction.data.result)
         {   
             console.log("Error occured : Could not complete transaction");
+            console.log(transaction.data );
             //add a toast
             //trans could not be completed e
             //some error occured
         }
         else{
-            console.log("Transaction Completed" + transaction.data);
+            console.log("Transaction Completed" );
+            console.log(transaction.data );
             //add a toash trans completed
         }
         
