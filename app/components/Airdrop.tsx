@@ -6,7 +6,6 @@ import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { CardHeader, TextField } from "@mui/material";
-import { Connection } from "@solana/web3.js";
 import CustomizedSnackbars from "./Snackbar";
 
 export function AirDrop() {
@@ -14,15 +13,15 @@ export function AirDrop() {
   const { connection } = useConnection();
   const [snackbarMessage, setSnackbarMessage] = React.useState<string | null>(
     null
-  ); // Manage the Snackbar message state
+  );
   const [openSnackbar, setOpenSnackbar] = React.useState(false); // Control when the Snackbar should open
 
-  const getConfirmation = async (connection: Connection, tx: string) => {
-    const result = await connection.getSignatureStatus(tx, {
-      searchTransactionHistory: true,
-    });
-    return result.value?.confirmationStatus;
-  };
+  // const getConfirmation = async (connection: Connection, tx: string) => {
+  //   const result = await connection.getSignatureStatus(tx, {
+  //     searchTransactionHistory: true,
+  //   });
+  //   return result.value?.confirmationStatus;
+  // };
 
   async function airdropSol() {
     if (!wallet.publicKey) {
