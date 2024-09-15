@@ -6,7 +6,6 @@ import {
   Transaction,
 } from "@solana/web3.js";
 import Card from "@mui/material/Card";
-import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { CardActions, CardContent, CardHeader, TextField } from "@mui/material";
