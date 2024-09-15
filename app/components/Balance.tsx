@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import { useConnection, useWallet } from "@solana/wallet-adapter-react";
 import { LAMPORTS_PER_SOL } from "@solana/web3.js";
 import * as React from "react";
@@ -47,11 +47,11 @@ export function ShowSolBalance() {
           // If the wallet is connected, fetch balance
           showBalance();
           hasFetchedBalance.current = true;
-          clearTimeout(timeout1Id); 
+          clearTimeout(timeout1Id);
         } else {
           // Retry after a delay
           const timeout2Id = setTimeout(checkWalletConnection, 2000); // Retry every 2 seconds
-          clearTimeout(timeout2Id)
+          clearTimeout(timeout2Id);
         }
       };
 
@@ -61,7 +61,7 @@ export function ShowSolBalance() {
   }, [wallet.publicKey]); // Dependency on wallet.publicKey to rerun if it changes
 
   return (
-    <div className="flex-grow bg-gradient-to-br from-purple-400 via-pink-500 to-red-500 flex items-center justify-center p-4 pt-16">
+    <div className="flex-grow bg-black flex items-center justify-center p-4 pt-16">
       <Card className="w-full max-w-md overflow-hidden transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl">
         <CardHeader
           className="bg-gradient-to-r from-blue-500 to-purple-600 text-white p-6"

@@ -10,10 +10,14 @@ import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { CardActions, CardContent, CardHeader, TextField } from "@mui/material";
+import { useState } from "react";
+import CustomizedSnackbars from "./Snackbar";
 
 export function SendSol() {
   const wallet = useWallet();
   const { connection } = useConnection();
+  const [snackbarMessage, setSnackbarMessage] = useState<string | null>(null); // Manage the Snackbar message state
+  const [openSnackbar, setOpenSnackbar] = useState(false); // Control when the Snackbar should open
 
   const sendTransaction = async () => {
     if (!wallet.publicKey) {
@@ -42,10 +46,18 @@ export function SendSol() {
     );
 
     await wallet.sendTransaction(transaction, connection);
-    alert("SOL send successfully to" + to);
+    // alert("SOL send successfully to" + to);
+    const msg = `SOL send successfully to ${to}`;
+    setSnackbarMessage(msg);
+    setOpenSnackbar(true);
   };
+
+  const handleCloseSnackbar = () => {
+    setOpenSnackbar(false); // Close the Snackbar
+  };
+
   return (
-    <div className="flex-grow bg-gradient-to-br from-purple-400 via-pink-500 to-red-500 flex items-center justify-center p-4 pt-16">
+    <div className="flex-grow  flex items-center justify-center p-4 pt-16">
       <Card className="w-full max-w-md overflow-hidden transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-xl">
         <CardHeader
           className="bg-gradient-to-r from-blue-500 to-purple-600 text-white p-6"
@@ -84,6 +96,13 @@ export function SendSol() {
           </Button>
         </CardActions>
       </Card>
+      {snackbarMessage && (
+        <CustomizedSnackbars
+          message={snackbarMessage}
+          open={openSnackbar}
+          handleClose={handleCloseSnackbar}
+        />
+      )}
     </div>
   );
 }
