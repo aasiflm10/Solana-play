@@ -44,7 +44,6 @@
 ##  Overview
 
 <code>❯ Solana-Play is a decentralized application (dApp) built on the Solana blockchain. It offers core functionalities like checking wallet balance, airdropping SOL tokens, sending SOL to other addresses, and signing messages. This application runs on the devnet and is designed for learning and experimenting with Solana's blockchain infrastructure.
-
 </code>
 
 ---
@@ -52,11 +51,10 @@
 ##  Features
 
 <code>❯Explore the following features in Solana-Play : 
-
 - Show Balance: View the SOL balance of your connected wallet.
 - Airdrop SOL: Request an airdrop of SOL tokens to your devnet wallet for testing.
 - Send SOL: Transfer SOL tokens to another wallet address.
-- Sign Message: Sign a message using your Solana wallet.</code>
+- Sign Message : Sign a message using Solana wallet. </code>
 ---
 
 ##  Repository Structure
