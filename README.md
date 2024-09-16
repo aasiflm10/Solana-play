@@ -5,7 +5,7 @@
     <h1 align="center">SOLANA-PLAY</h1>
 </p>
 <p align="center">
-    <em><code>❯ [Solana-Play Deployed on Vercel](https://solana-play-nine.vercel.app/)</code></em>
+    [Solana-Play Deployed on Vercel](https://solana-play-nine.vercel.app/)
 </p>
 <p align="center">
 	<img src="https://img.shields.io/github/license/aasiflm10/Solana-play?style=flat&logo=opensourceinitiative&logoColor=white&color=0080ff" alt="license">
