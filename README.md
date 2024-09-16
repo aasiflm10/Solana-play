@@ -54,13 +54,9 @@
 <code>❯Explore the following features in Solana-Play : 
 
 - Show Balance: View the SOL balance of your connected wallet.
-
 - Airdrop SOL: Request an airdrop of SOL tokens to your devnet wallet for testing.
-
 - Send SOL: Transfer SOL tokens to another wallet address.
-
 - Sign Message: Sign a message using your Solana wallet.</code>
-
 ---
 
 ##  Repository Structure
