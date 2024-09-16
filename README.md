@@ -32,14 +32,9 @@
 
 - [ Overview](#-overview)
 - [ Features](#-features)
-- [ Repository Structure](#-repository-structure)
-- [ Modules](#-modules)
 - [ Getting Started](#-getting-started)
     - [ Prerequisites](#-prerequisites)
     - [ Installation](#-installation)
-    - [ Usage](#-usage)
-    - [ Tests](#-tests)
-- [ Project Roadmap](#-project-roadmap)
 - [ Contributing](#-contributing)
 - [ License](#-license)
 - [ Acknowledgments](#-acknowledgments)
@@ -48,13 +43,23 @@
 
 ##  Overview
 
-<code>❯ REPLACE-ME</code>
+<code>❯ Solana-Play is a decentralized application (dApp) built on the Solana blockchain. It offers core functionalities like checking wallet balance, airdropping SOL tokens, sending SOL to other addresses, and signing messages. This application runs on the devnet and is designed for learning and experimenting with Solana's blockchain infrastructure.
+
+</code>
 
 ---
 
 ##  Features
 
-<code>❯ REPLACE-ME</code>
+<code>❯Explore the following features in Solana-Play : 
+
+- Show Balance: View the SOL balance of your connected wallet.
+
+- Airdrop SOL: Request an airdrop of SOL tokens to your devnet wallet for testing.
+
+- Send SOL: Transfer SOL tokens to another wallet address.
+
+- Sign Message: Sign a message using your Solana wallet.</code>
 
 ---
 
@@ -85,69 +90,13 @@
 
 ---
 
-##  Modules
-
-<details closed><summary>.</summary>
-
-| File | Summary |
-| --- | --- |
-| [postcss.config.mjs](https://github.com/aasiflm10/Solana-play/blob/main/postcss.config.mjs) | <code>❯ REPLACE-ME</code> |
-| [tailwind.config.ts](https://github.com/aasiflm10/Solana-play/blob/main/tailwind.config.ts) | <code>❯ REPLACE-ME</code> |
-| [tsconfig.json](https://github.com/aasiflm10/Solana-play/blob/main/tsconfig.json) | <code>❯ REPLACE-ME</code> |
-| [package.json](https://github.com/aasiflm10/Solana-play/blob/main/package.json) | <code>❯ REPLACE-ME</code> |
-| [config.ts](https://github.com/aasiflm10/Solana-play/blob/main/config.ts) | <code>❯ REPLACE-ME</code> |
-| [next.config.mjs](https://github.com/aasiflm10/Solana-play/blob/main/next.config.mjs) | <code>❯ REPLACE-ME</code> |
-| [package-lock.json](https://github.com/aasiflm10/Solana-play/blob/main/package-lock.json) | <code>❯ REPLACE-ME</code> |
-
-</details>
-
-<details closed><summary>components.core</summary>
-
-| File | Summary |
-| --- | --- |
-| [animated-background.tsx](https://github.com/aasiflm10/Solana-play/blob/main/components/core/animated-background.tsx) | <code>❯ REPLACE-ME</code> |
-
-</details>
-
-<details closed><summary>lib</summary>
-
-| File | Summary |
-| --- | --- |
-| [utils.ts](https://github.com/aasiflm10/Solana-play/blob/main/lib/utils.ts) | <code>❯ REPLACE-ME</code> |
-
-</details>
-
-<details closed><summary>app</summary>
-
-| File | Summary |
-| --- | --- |
-| [globals.css](https://github.com/aasiflm10/Solana-play/blob/main/app/globals.css) | <code>❯ REPLACE-ME</code> |
-| [page.tsx](https://github.com/aasiflm10/Solana-play/blob/main/app/page.tsx) | <code>❯ REPLACE-ME</code> |
-| [layout.tsx](https://github.com/aasiflm10/Solana-play/blob/main/app/layout.tsx) | <code>❯ REPLACE-ME</code> |
-
-</details>
-
-<details closed><summary>app.components</summary>
-
-| File | Summary |
-| --- | --- |
-| [Airdrop.tsx](https://github.com/aasiflm10/Solana-play/blob/main/app/components/Airdrop.tsx) | <code>❯ REPLACE-ME</code> |
-| [NavBar.tsx](https://github.com/aasiflm10/Solana-play/blob/main/app/components/NavBar.tsx) | <code>❯ REPLACE-ME</code> |
-| [Card.tsx](https://github.com/aasiflm10/Solana-play/blob/main/app/components/Card.tsx) | <code>❯ REPLACE-ME</code> |
-| [SendSol.tsx](https://github.com/aasiflm10/Solana-play/blob/main/app/components/SendSol.tsx) | <code>❯ REPLACE-ME</code> |
-| [SignMessage.tsx](https://github.com/aasiflm10/Solana-play/blob/main/app/components/SignMessage.tsx) | <code>❯ REPLACE-ME</code> |
-| [Snackbar.tsx](https://github.com/aasiflm10/Solana-play/blob/main/app/components/Snackbar.tsx) | <code>❯ REPLACE-ME</code> |
-| [Balance.tsx](https://github.com/aasiflm10/Solana-play/blob/main/app/components/Balance.tsx) | <code>❯ REPLACE-ME</code> |
-
-</details>
-
----
-
 ##  Getting Started
 
 ###  Prerequisites
 
-**TypeScript**: `version x.y.z`
+- **Nextjs**
+- **TypeScript**
+- **React**
 
 ###  Installation
 
@@ -168,31 +117,7 @@ Build the project from source:
 ❯ npm install
 ```
 
-###  Usage
 
-To run the project, execute the following command:
-
-```sh
-❯ npm run build && node dist/main.js
-```
-
-###  Tests
-
-Execute the test suite using the following command:
-
-```sh
-❯ npm test
-```
-
----
-
-##  Project Roadmap
-
-- [X] **`Task 1`**: <strike>Implement feature one.</strike>
-- [ ] **`Task 2`**: Implement feature two.
-- [ ] **`Task 3`**: Implement feature three.
-
----
 
 ##  Contributing
 
@@ -227,26 +152,12 @@ Contributions are welcome! Here are several ways you can contribute:
 8. **Review**: Once your PR is reviewed and approved, it will be merged into the main branch. Congratulations on your contribution!
 </details>
 
-<details closed>
-<summary>Contributor Graph</summary>
-<br>
-<p align="left">
-   <a href="https://github.com{/aasiflm10/Solana-play/}graphs/contributors">
-      <img src="https://contrib.rocks/image?repo=aasiflm10/Solana-play">
-   </a>
-</p>
-</details>
-
 ---
 
-##  License
-
-This project is protected under the [SELECT-A-LICENSE](https://choosealicense.com/licenses) License. For more details, refer to the [LICENSE](https://choosealicense.com/licenses/) file.
-
----
 
 ##  Acknowledgments
 
-- List any resources, contributors, inspiration, etc. here.
+- Harkirat's cohort 3.
+- Week-5 Web3 ( Harkirat's cohort 3)
 
 ---
